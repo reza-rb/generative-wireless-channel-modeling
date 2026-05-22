@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# PyTorch / model artifacts
+*.pt
+*.pth
+*.ckpt
+
+# Results
+results/
+outputs/
+wandb/
+mlruns/
+
+# Data
+data/raw/
+data/processed/
+data/external/
+
+# OS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
