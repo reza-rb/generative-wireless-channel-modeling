@@ -48,3 +48,32 @@ print(samples_k10.mean(axis=0))
 print(samples_k100.mean(axis=0))
 
 print(average_channel_power(samples_k10))
+
+from gwcm.channels.multipath import (
+    generate_multipath_samples,
+    average_channel_power,
+)
+
+samples = generate_multipath_samples(
+    num_samples=10_000,
+    num_paths=5,
+    decay_factor=1.0,
+    seed=42,
+)
+print (f"the outputs for multipath samples are: ")
+print(samples.shape)
+print(samples[:5])
+print(samples.mean(axis=0))
+print(average_channel_power(samples))
+
+
+samples_los = generate_multipath_samples(
+    num_samples=10_000,
+    num_paths=5,
+    decay_factor=1.0,
+    los_component=1.0 + 0.0j,
+    normalize_power=False,
+    seed=42,
+)
+print (f"the outputs for multipath samples with LOS component are: ")
+print(samples_los.mean(axis=0))

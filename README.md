@@ -20,7 +20,7 @@ $$
 For neural network processing, each complex sample is represented as a real-valued vector:
 
 $$
-x = [\operatorname{Re}(h), \operatorname{Im}(h)]
+x = [\mathrm{Re}(h), \mathrm{Im}(h)]
 $$
 
 The project learns:
