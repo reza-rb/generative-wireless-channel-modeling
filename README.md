@@ -7,27 +7,27 @@ distributions of wireless channel coefficients using Normalizing Flows.
 
 The main density modeling problem is:
 
-\[
+$$
 p(h)
-\]
+$$
 
-where \(h\) is a complex-valued wireless channel coefficient:
+where $h$ is a complex-valued wireless channel coefficient:
 
-\[
-h = h_\text{real} + j h_\text{imag}
-\]
+$$
+h = h_{\text{real}} + j h_{\text{imag}}
+$$
 
 For neural network processing, each complex sample is represented as a real-valued vector:
 
-\[
+$$
 x = [\operatorname{Re}(h), \operatorname{Im}(h)]
-\]
+$$
 
 The project learns:
 
-\[
+$$
 p(x)
-\]
+$$
 
 using flow-based generative models.
 

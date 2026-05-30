@@ -1,0 +1,22 @@
+from gwcm.channels.rayleigh import (
+    generate_rayleigh_samples,
+    average_channel_power,
+    rayleigh_magnitude,
+)
+
+samples = generate_rayleigh_samples(
+    num_samples=10_000,
+    sigma=1.0,
+    seed=42, 
+)
+
+print(samples.shape)
+print(samples[:5])
+print(average_channel_power(samples))
+print(rayleigh_magnitude(samples).shape)
+
+print(samples[:, 0].mean())
+print(samples[:, 1].mean()) 
+
+print(samples[:, 0].std())
+print(samples[:, 1].std())
