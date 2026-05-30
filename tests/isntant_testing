@@ -9,7 +9,7 @@ samples = generate_rayleigh_samples(
     sigma=1.0,
     seed=42, 
 )
-
+print (f"the outputs for rayleigh samples are: ")
 print(samples.shape)
 print(samples[:5])
 print(average_channel_power(samples))
@@ -20,3 +20,31 @@ print(samples[:, 1].mean())
 
 print(samples[:, 0].std())
 print(samples[:, 1].std())
+
+
+from gwcm.channels.rician import generate_rician_samples, average_channel_power
+
+samples_k0 = generate_rician_samples(
+    num_samples=10_000,
+    k_factor=0.0,
+    seed=42,
+)
+
+samples_k10 = generate_rician_samples(
+    num_samples=10_000,
+    k_factor=10.0,
+    seed=42,
+)
+
+samples_k100 = generate_rician_samples(
+    num_samples=10_000,
+    k_factor=100.0,
+    seed=42,
+)
+
+print (f"the outputs for rician samples with k=0, 10, 100 are: ")
+print(samples_k0.mean(axis=0))
+print(samples_k10.mean(axis=0))
+print(samples_k100.mean(axis=0))
+
+print(average_channel_power(samples_k10))
