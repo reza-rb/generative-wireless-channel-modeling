@@ -77,3 +77,29 @@ samples_los = generate_multipath_samples(
 )
 print (f"the outputs for multipath samples with LOS component are: ")
 print(samples_los.mean(axis=0))
+
+
+from gwcm.channels.rayleigh import generate_rayleigh_samples
+from gwcm.data.channel_dataset import create_dataloaders
+
+samples = generate_rayleigh_samples(
+    num_samples=10_000,
+    sigma=1.0,
+    seed=42,
+)
+
+loaders = create_dataloaders(
+    samples=samples,
+    batch_size=256,
+    train_split=0.8,
+    val_split=0.1,
+    test_split=0.1,
+    seed=42,
+)
+
+batch = next(iter(loaders.train))
+print (f"the outputs for dataloader batch are: ")
+print(batch.shape)
+print(batch.dtype)
+print(batch.mean(dim=0))
+print(batch.std(dim=0))
