@@ -67,4 +67,4 @@ def test_invalid_num_samples_raises_error() -> None:
 
 def test_invalid_sigma_raises_error() -> None:
     with pytest.raises(ValueError, match="sigma must be"):
-        generate_rayleigh_samples(num_samples=100, sigma=0.0)
+        generate_rayleigh_samples(num_samples=100, sigma=0.0) 

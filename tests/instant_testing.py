@@ -103,3 +103,57 @@ print(batch.shape)
 print(batch.dtype)
 print(batch.mean(dim=0))
 print(batch.std(dim=0))
+
+import matplotlib.pyplot as plt
+from gwcm.visualization.distributions import(
+    plot_complex_scatter,
+    plot_real_imag_histograms,
+    plot_magnitude_histogram,
+)
+
+rayleigh = generate_rayleigh_samples(
+    num_samples=10_000,
+    sigma=1.0,
+    seed=42,
+)
+
+rician = generate_rician_samples(
+    num_samples=10_000,
+    k_factor=10.0,  
+    seed=42,
+)
+
+multipath = generate_multipath_samples(
+    num_samples=10_000,
+    num_paths=5,
+    decay_factor=1.0,
+    seed=42,
+)
+
+plot_complex_scatter(rayleigh, title="Rayleigh Samples",
+  save_path="results/figures/rayleigh_scatter.png"                   
+)
+plot_complex_scatter(rician, title="Rician Samples (k=10)",
+  save_path="results/figures/rician_scatter.png"                   
+)
+plot_complex_scatter(multipath, title="Multipath Samples",
+  save_path="results/figures/multipath_scatter.png"                   
+)
+
+
+plot_real_imag_histograms(rayleigh,
+    title="Rayleigh Real and Imaginary Components",
+    save_path="results/figures/rayleigh_real_imag_hist.png",
+)
+
+plot_magnitude_histogram(rayleigh,
+    title="Rayleigh Magnitude Distribution",
+    save_path="results/figures/rayleigh_magnitude_hist.png",
+)
+
+plt.show()
+
+
+
+
+
