@@ -157,3 +157,31 @@ plt.show()
 
 
 
+import torch
+
+from gwcm.models.flows.realnvp import RealNVP
+
+model = RealNVP(
+    input_dim=2,
+    num_coupling_layers=6,
+    hidden_dim=128,
+    num_hidden_layers=2,
+)
+
+x = torch.randn(256, 2)
+
+z, log_det = model.forward(x)
+x_reconstructed, inverse_log_det = model.inverse(z)
+log_prob = model.log_prob(x)
+loss = model.negative_log_likelihood(x)
+samples = model.sample(1000)
+
+print (f"the outputs for realnvp model are: ")
+
+print("x:", x.shape)
+print("z:", z.shape)
+print("log_det:", log_det.shape)
+print("log_prob:", log_prob.shape)
+print("loss:", loss.item())
+print("samples:", samples.shape)
+print("reconstruction error:", torch.max(torch.abs(x - x_reconstructed)).item())
