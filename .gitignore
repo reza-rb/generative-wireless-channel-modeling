@@ -41,5 +41,5 @@ data/external/
 *.log
 
 # instant test results
-src/gwcm/tests/instant_testing.py
-temporary_test.py .Rhistory
+temporary_test.py 
+.Rhistory
