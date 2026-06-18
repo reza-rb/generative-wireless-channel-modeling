@@ -17,10 +17,10 @@ $$
 
 where:
 
-- \(h\) is the complex channel coefficient.
-- \(h_{\mathrm{real}}\) is the real part.
-- \(h_{\mathrm{imag}}\) is the imaginary part.
-- \(j\) is the imaginary unit.
+- $h$ is the complex channel coefficient.
+- $h_{\mathrm{real}}$ is the real part.
+- $h_{\mathrm{imag}}$ is the imaginary part.
+- $j$ is the imaginary unit.
 
 Most PyTorch neural networks use real-valued tensors. Therefore, each complex channel coefficient is represented as a two-dimensional real vector:
 
@@ -40,7 +40,7 @@ $$
 p(x)
 $$
 
-where \(x\) contains the real and imaginary parts of the channel coefficient.
+where $x$ contains the real and imaginary parts of the channel coefficient.
 
 For one scalar complex channel coefficient:
 
@@ -48,7 +48,7 @@ $$
 x \in R^2
 $$
 
-For a dataset with \(N\) channel samples:
+For a dataset with $N$ channel samples:
 
 $$
 X \in R^{N \times 2}
@@ -74,7 +74,7 @@ $$
 p_{\theta}(x)
 $$
 
-where \(\theta\) represents the trainable parameters of the model.
+where $\theta$ represents the trainable parameters of the model.
 
 A good model should assign high probability to realistic channel samples and low probability to unlikely channel samples.
 
@@ -82,7 +82,7 @@ A good model should assign high probability to realistic channel samples and low
 
 ## 3. Normalizing Flows
 
-A normalizing flow is an invertible neural network that maps data samples \(x\) to latent variables \(z\).
+A normalizing flow is an invertible neural network that maps data samples $x$ to latent variables $z$.
 
 The data-to-latent direction is:
 
@@ -102,7 +102,7 @@ $$
 z \sim \mathcal{N}(0, I)
 $$
 
-where \(I\) is the identity covariance matrix.
+where $I$ is the identity covariance matrix.
 
 ---
 
@@ -110,7 +110,7 @@ where \(I\) is the identity covariance matrix.
 
 Normalizing flows compute exact likelihoods using the change-of-variables formula.
 
-The density of \(x\) is:
+The density of $x$ is:
 
 $$
 p_X(x) = p_Z(z) |\det J|
@@ -118,11 +118,11 @@ $$
 
 where:
 
-- \(x\) is the data sample.
-- \(z = f^{-1}(x)\) is the latent representation.
-- \(p_Z(z)\) is the base density.
-- \(J\) is the Jacobian of the inverse transformation.
-- \(|\det J|\) is the absolute determinant of the Jacobian.
+- $x$ is the data sample.
+- $z = f^{-1}(x)$ is the latent representation.
+- $p_Z(z)$ is the base density.
+- $J$ is the Jacobian of the inverse transformation.
+- $|\det J|$ is the absolute determinant of the Jacobian.
 
 Taking the logarithm gives:
 
@@ -148,7 +148,7 @@ $$
 L(\theta) = -\frac{1}{N} \sum_{i=1}^{N} \log p_{\theta}(x_i)
 $$
 
-For a mini-batch with batch size \(B\):
+For a mini-batch with batch size $B$:
 
 $$
 L_B(\theta) = -\frac{1}{B} \sum_{i=1}^{B} \log p_{\theta}(x_i)
@@ -162,7 +162,7 @@ Lower negative log-likelihood means the model assigns higher probability to the 
 
 RealNVP uses affine coupling layers.
 
-The input vector \(x\) is split into two parts:
+The input vector $x$ is split into two parts:
 
 $$
 x = [x_a, x_b]
@@ -182,9 +182,9 @@ $$
 
 where:
 
-- \(s(x_a)\) is the scale network output.
-- \(t(x_a)\) is the translation network output.
-- \(\exp\) makes the scaling positive.
+- $s(x_a)$ is the scale network output.
+- $t(x_a)$ is the translation network output.
+- $\exp$ makes the scaling positive.
 
 The inverse transformation is:
 
@@ -234,7 +234,7 @@ $$
 
 follows a two-dimensional Gaussian distribution.
 
-For \(\sigma = 1.0\):
+For $\sigma = 1.0$:
 
 $$
 x \sim \mathcal{N}(0, I)

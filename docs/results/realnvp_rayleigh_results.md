@@ -29,7 +29,7 @@ $$
 p(x)
 $$
 
-where \(x\) contains the real and imaginary parts of the channel coefficient.
+where $x$ contains the real and imaginary parts of the channel coefficient.
 
 ---
 
@@ -71,7 +71,7 @@ $$
 E[|h|^2] = E[h_{\mathrm{real}}^2 + h_{\mathrm{imag}}^2] = 2\sigma^2 = 2
 $$
 
-This means that, for \(\sigma = 1.0\), the average channel power should be close to 2.
+This means that, for $\sigma = 1.0$, the average channel power should be close to 2.
 
 ---
 
@@ -79,7 +79,7 @@ This means that, for \(\sigma = 1.0\), the average channel power should be close
 
 The model is RealNVP, a flow-based generative model based on affine coupling layers.
 
-RealNVP learns an invertible transformation between data samples \(x\) and latent variables \(z\):
+RealNVP learns an invertible transformation between data samples $x$ and latent variables $z$:
 
 $$
 z = f^{-1}(x)
@@ -105,10 +105,10 @@ $$
 
 where:
 
-- \(x\) is the channel sample in real-valued form.
-- \(z\) is the latent representation.
-- \(J\) is the Jacobian of the inverse transformation.
-- \(\log |\det J|\) is the log-determinant correction.
+- $x$ is the channel sample in real-valued form.
+- $z$ is the latent representation.
+- $J$ is the Jacobian of the inverse transformation.
+- $\log |\det J|$ is the log-determinant correction.
 
 ---
 
@@ -122,10 +122,10 @@ $$
 
 where:
 
-- \(B\) is the batch size.
-- \(x_i\) is one wireless channel sample.
-- \(p_{\theta}(x_i)\) is the density assigned by the RealNVP model.
-- \(\theta\) represents the trainable model parameters.
+- $B$ is the batch size.
+- $x_i$ is one wireless channel sample.
+- $p_{\theta}(x_i)$ is the density assigned by the RealNVP model.
+- $\theta$ represents the trainable model parameters.
 
 The objective is to assign high likelihood to realistic Rayleigh fading channel samples.
 
@@ -137,9 +137,9 @@ The objective is to assign high likelihood to realistic Rayleigh fading channel 
 |---|---:|
 | Channel model | Rayleigh fading |
 | Number of samples | 10,000 |
-| Input representation | \([\mathrm{Re}(h), \mathrm{Im}(h)]\) |
+| Input representation | $[\mathrm{Re}(h), \mathrm{Im}(h)]$ |
 | Input dimension | 2 |
-| \(\sigma\) | 1.0 |
+| $\sigma$ | 1.0 |
 | Train split | 80% |
 | Validation split | 10% |
 | Test split | 10% |
@@ -204,7 +204,7 @@ $$
 NLL_{\mathrm{theory}} \approx 2.8379
 $$
 
-Because Rayleigh fading with \(\sigma = 1.0\) produces:
+Because Rayleigh fading with $\sigma = 1.0$ produces:
 
 $$
 [\mathrm{Re}(h), \mathrm{Im}(h)] \sim \mathcal{N}(0, I)
@@ -268,7 +268,7 @@ The RealNVP model successfully learns the Rayleigh fading distribution if:
 5. The generated average power is close to the reference average power.
 6. The generated scatter plot visually matches the Rayleigh reference scatter plot.
 
-This experiment is a baseline. Since Rayleigh fading with \(\sigma = 1.0\) produces a two-dimensional standard Gaussian distribution, it is expected to be relatively easy for RealNVP.
+This experiment is a baseline. Since Rayleigh fading with $\sigma = 1.0$ produces a two-dimensional standard Gaussian distribution, it is expected to be relatively easy for RealNVP.
 
 The purpose of this experiment is to verify that the complete pipeline works correctly before moving to more structured wireless channel models such as Rician and multipath fading.
 
@@ -286,7 +286,7 @@ Current limitations:
 4. The experiment does not yet include distribution-distance metrics.
 5. The experiment does not yet compare RealNVP with MAF or NSF.
 6. The channel is flat fading, not frequency-selective.
-7. The model currently learns only \(p(h)\), not conditional distributions such as \(p(h|y)\).
+7. The model currently learns only $p(h)$, not conditional distributions such as $p(h|y)$.
 
 ---
 

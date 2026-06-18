@@ -86,9 +86,9 @@ $$
 
 where:
 
-- \(K\) is the Rician K-factor,
-- \(h_{\mathrm{LOS}}\) is the line-of-sight component,
-- \(h_{\mathrm{NLOS}}\) is the non-line-of-sight scattering component.
+- $K$ is the Rician K-factor,
+- $h_{\mathrm{LOS}}$ is the line-of-sight component,
+- $h_{\mathrm{NLOS}}$ is the non-line-of-sight scattering component.
 
 In this comparison, the default experiment uses:
 
@@ -120,9 +120,9 @@ $$
 
 where:
 
-- \(a_{\ell}\) is the path amplitude,
-- \(\phi_{\ell}\) is the path phase,
-- \(L\) is the number of paths.
+- $a_{\ell}$ is the path amplitude,
+- $\phi_{\ell}$ is the path phase,
+- $L$ is the number of paths.
 
 The default comparison uses:
 

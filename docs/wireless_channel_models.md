@@ -21,7 +21,7 @@ $$
 p(x)
 $$
 
-instead of directly modeling complex-valued \(p(h)\).
+instead of directly modeling complex-valued $p(h)$.
 
 ---
 
@@ -72,7 +72,7 @@ $$
 E[|h|^2] = 2\sigma^2
 $$
 
-For \(\sigma = 1.0\):
+For $\sigma = 1.0$:
 
 $$
 E[|h|^2] = 2
@@ -86,7 +86,7 @@ $$
 x = [\mathrm{Re}(h), \mathrm{Im}(h)]
 $$
 
-For \(N\) samples, the dataset has shape:
+For $N$ samples, the dataset has shape:
 
 $$
 X \in R^{N \times 2}
@@ -111,8 +111,8 @@ $$
 
 where:
 
-- \(h_{\mathrm{LOS}}\) is the deterministic line-of-sight component.
-- \(h_{\mathrm{scatter}}\) is the random scattered component.
+- $h_{\mathrm{LOS}}$ is the deterministic line-of-sight component.
+- $h_{\mathrm{scatter}}$ is the random scattered component.
 
 The strength of the line-of-sight component is controlled by the Rician K-factor:
 
@@ -122,8 +122,8 @@ $$
 
 where:
 
-- \(P_{\mathrm{LOS}}\) is the power of the line-of-sight component.
-- \(P_{\mathrm{scatter}}\) is the power of the scattered component.
+- $P_{\mathrm{LOS}}$ is the power of the line-of-sight component.
+- $P_{\mathrm{scatter}}$ is the power of the scattered component.
 
 The K-factor in decibels is:
 
@@ -145,9 +145,9 @@ $$
 
 where:
 
-- \(h_{\mathrm{LOS}}\) is usually a deterministic complex number.
-- \(h_{\mathrm{NLOS}}\) is a Rayleigh scattering component.
-- \(K\) is the linear Rician K-factor.
+- $h_{\mathrm{LOS}}$ is usually a deterministic complex number.
+- $h_{\mathrm{NLOS}}$ is a Rayleigh scattering component.
+- $K$ is the linear Rician K-factor.
 
 A simple choice for the line-of-sight component is:
 
@@ -155,9 +155,9 @@ $$
 h_{\mathrm{LOS}} = e^{j\phi}
 $$
 
-where \(\phi\) is the line-of-sight phase.
+where $\phi$ is the line-of-sight phase.
 
-If \(\phi = 0\), then:
+If $\phi = 0$, then:
 
 $$
 h_{\mathrm{LOS}} = 1
@@ -167,10 +167,10 @@ $$
 
 | K-factor | Interpretation |
 |---:|---|
-| \(K = 0\) | No dominant line-of-sight path. Similar to Rayleigh fading. |
-| Small \(K\) | Weak line-of-sight component. |
-| Large \(K\) | Strong line-of-sight component. |
-| Very large \(K\) | Channel becomes concentrated around the deterministic component. |
+| $K = 0$ | No dominant line-of-sight path. Similar to Rayleigh fading. |
+| Small $K$ | Weak line-of-sight component. |
+| Large $K$ | Strong line-of-sight component. |
+| Very large $K$ | Channel becomes concentrated around the deterministic component. |
 
 ### Machine Learning Representation
 
@@ -205,10 +205,10 @@ $$
 
 where:
 
-- \(L\) is the number of paths.
-- \(\alpha_{\ell}\) is the complex gain of path \(\ell\).
-- \(\tau_{\ell}\) is the delay of path \(\ell\).
-- \(\delta(\tau - \tau_{\ell})\) represents a delayed impulse.
+- $L$ is the number of paths.
+- $\alpha_{\ell}$ is the complex gain of path $\ell$.
+- $\tau_{\ell}$ is the delay of path $\ell$.
+- $\delta(\tau - \tau_{\ell})$ represents a delayed impulse.
 
 For the first version of this project, we use a flat-fading equivalent channel coefficient:
 
@@ -224,8 +224,8 @@ $$
 
 where:
 
-- \(a_{\ell}\) is the path amplitude.
-- \(\phi_{\ell}\) is the path phase.
+- $a_{\ell}$ is the path amplitude.
+- $\phi_{\ell}$ is the path phase.
 
 The phase is usually sampled randomly:
 
@@ -241,8 +241,8 @@ $$
 
 where:
 
-- \(P_{\ell}\) is the power of path \(\ell\).
-- \(\lambda\) controls how quickly later paths become weaker.
+- $P_{\ell}$ is the power of path $\ell$.
+- $\lambda$ controls how quickly later paths become weaker.
 
 The path amplitude is:
 
@@ -260,7 +260,7 @@ $$
 x = [\mathrm{Re}(h), \mathrm{Im}(h)]
 $$
 
-For \(N\) generated channel samples:
+For $N$ generated channel samples:
 
 $$
 X \in R^{N \times 2}
@@ -282,7 +282,7 @@ $$
 
 This is a simplification, but it is useful for starting the density modeling problem.
 
-A more advanced frequency-selective channel depends on frequency or subcarrier index. For an OFDM-like model, the channel on subcarrier \(k\) can be written as:
+A more advanced frequency-selective channel depends on frequency or subcarrier index. For an OFDM-like model, the channel on subcarrier $k$ can be written as:
 
 $$
 h[k] = \sum_{\ell=1}^{L} \alpha_{\ell} e^{-j2\pi k \Delta f \tau_{\ell}}
@@ -290,9 +290,9 @@ $$
 
 where:
 
-- \(k\) is the subcarrier index.
-- \(\Delta f\) is the subcarrier spacing.
-- \(\tau_{\ell}\) is the delay of path \(\ell\).
+- $k$ is the subcarrier index.
+- $\Delta f$ is the subcarrier spacing.
+- $\tau_{\ell}$ is the delay of path $\ell$.
 
 This extension can be added later.
 
@@ -310,8 +310,8 @@ $$
 
 where:
 
-- \(N_r\) is the number of receive antennas.
-- \(N_t\) is the number of transmit antennas.
+- $N_r$ is the number of receive antennas.
+- $N_t$ is the number of transmit antennas.
 
 For neural networks, the complex matrix can be flattened and converted into a real-valued vector:
 
