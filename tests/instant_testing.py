@@ -185,3 +185,5 @@ print("log_prob:", log_prob.shape)
 print("loss:", loss.item())
 print("samples:", samples.shape)
 print("reconstruction error:", torch.max(torch.abs(x - x_reconstructed)).item())
+
+
