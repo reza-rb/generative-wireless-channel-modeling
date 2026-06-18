@@ -39,3 +39,7 @@ data/external/
 
 # Logs
 *.log
+
+# instant test results
+src/gwcm/tests/instant_testing.py
+temporary_test.py 
