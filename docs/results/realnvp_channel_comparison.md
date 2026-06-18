@@ -222,9 +222,9 @@ Replace the placeholder values after running the experiments.
 
 | Channel | Test NLL | Best Val NLL | Reference Power | Generated Power | Reference Mean | Generated Mean |
 |---|---:|---:|---:|---:|---|---|
-| Rayleigh | TODO | TODO | TODO | TODO | TODO | TODO |
-| Rician, K = 10 dB | TODO | TODO | TODO | TODO | TODO | TODO |
-| Multipath, L = 5 | TODO | TODO | TODO | TODO | TODO | TODO |
+| Rayleigh | 2.8879 | 2.8853 | 2.0189 | 1.9414 | -0.0102 | 0.0165 |
+| Rician, K = 10 dB | -0.2002 | -0.2056 | 0.9967 | 1.0163 | 0.9512 | 1.01003 |
+| Multipath, L = 5 | 2.0991 | 2.0975 | 1.0000 | 0.9887 | -0.0012 | 0.0491 |
 
 ---
 
@@ -234,31 +234,31 @@ Replace the placeholder values after running the experiments.
 
 | Statistic | Reference | Generated |
 |---|---:|---:|
-| Mean real | TODO | TODO |
-| Mean imaginary | TODO | TODO |
-| Std real | TODO | TODO |
-| Std imaginary | TODO | TODO |
-| Average power | TODO | TODO |
+| Mean real | -0.0102 | 0.0165 |
+| Mean imaginary | 0.0203 | 0.0162 |
+| Std real | 1.0062 | 0.9581 |
+| Std imaginary | 1.0028 | 1.0113 |
+| Average power | 2.0189 | 1.9413 |
 
 ### Rician, K = 10 dB
 
 | Statistic | Reference | Generated |
 |---|---:|---:|
-| Mean real | TODO | TODO |
-| Mean imaginary | TODO | TODO |
-| Std real | TODO | TODO |
-| Std imaginary | TODO | TODO |
-| Average power | TODO | TODO |
+| Mean real | 0.9512 | 1.0100 |
+| Mean imaginary | 0.0043 | -0.0033 |
+| Std real | 0.2145 | 0.2232 |
+| Std imaginary | 0.2138 | 0.2291 |
+| Average power | 0.9966 | 1.1225 |
 
 ### Multipath, L = 5
 
 | Statistic | Reference | Generated |
 |---|---:|---:|
-| Mean real | TODO | TODO |
-| Mean imaginary | TODO | TODO |
-| Std real | TODO | TODO |
-| Std imaginary | TODO | TODO |
-| Average power | TODO | TODO |
+| Mean real | -0.0012 | 0.0491 |
+| Mean imaginary | -0.0075 | -0.0154 |
+| Std real | 0.7079 | 0.7128 |
+| Std imaginary | 0.7062 | 0.6913 |
+| Average power | 1.0 | 0.9887 |
 
 ---
 
