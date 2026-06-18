@@ -19,11 +19,17 @@ env/
 *.pth
 *.ckpt
 
-# Results
-results/
-outputs/
+# Experiment outputs - do not commit generated training artifacts
+/results/
+/outputs/
 wandb/
 mlruns/
+
+# Documentation artifacts - commit these
+!docs/results/
+!docs/results/**
+!docs/assets/
+!docs/assets/**
 
 # Data
 data/raw/
