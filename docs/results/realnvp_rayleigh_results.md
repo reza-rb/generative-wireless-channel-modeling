@@ -235,7 +235,7 @@ cp results/figures/realnvp_rayleigh_comparison.png docs/assets/realnvp_rayleigh_
 
 The comparison plot is shown below:
 
-![RealNVP Rayleigh Comparison](../assets/realnvp_rayleigh_comparison.png)
+![RealNVP Rayleigh Comparison](..docs/assets/realnvp_rayleigh_comparison.png)
 
 ### Expected Visual Interpretation
 
