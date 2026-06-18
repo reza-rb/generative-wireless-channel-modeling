@@ -56,3 +56,45 @@ notebooks/      exploratory notebooks
 scripts/        training and evaluation entry points
 src/gwcm/       main Python package
 tests/          unit tests
+```
+
+## Baseline Result: RealNVP on Rayleigh Fading
+
+The first experiment trains RealNVP on scalar complex Rayleigh fading channel
+coefficients represented as:
+
+$$
+x = [\mathrm{Re}(h), \mathrm{Im}(h)]
+$$
+
+For Rayleigh fading with $\sigma = 1.0$, the target distribution is:
+
+$$
+x \sim \mathcal{N}(0,I)
+$$
+
+The theoretical negative log-likelihood for a 2D standard Gaussian is:
+
+$$
+1 + \log(2\pi) \approx 2.8379
+$$
+
+Run the experiment:
+
+```bash
+python3 scripts/train_realnvp_rayleigh.py
+```
+
+The script saves:
+
+```text
+results/metrics/realnvp_rayleigh_metrics.json
+results/figures/realnvp_rayleigh_comparison.png
+results/checkpoints/realnvp_rayleigh_best.pt
+```
+
+Detailed results are documented in:
+
+```text
+docs/results/realnvp_rayleigh_results.md
+```
