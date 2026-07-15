@@ -1,4 +1,3 @@
-cat > docs/results/realnvp_channel_comparison.md <<'EOF'
 # RealNVP Channel Modeling Comparison
 
 ## 1. Overview
